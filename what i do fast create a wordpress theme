@@ -1,0 +1,61 @@
+<?php
+//css and js call
+
+//include_once('lib/js_css.php'); 
+
+function secent_quickstart_theme_files(){
+    
+    
+    // load css into the website's front-end
+
+add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_style' );
+    // css for call code
+  
+    wp_register_style('bootstrap',get_template_directory_uri().'/css/owl.carousel.css',array(),'1.1.1','all');
+
+    // wp enqueue  js and css
+  
+    wp_enqueue_style('bootstrap');
+
+    // js for call code
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('bootstrapjs',get_template_directory_uri() . '/js/modernizr.custom.js', array('jquery'),'1.1.2',true);
+
+}
+add_action('wp_enqueue_scripts', 'secent_quickstart_theme_files'); 
+
+//head and footer call
+    <?php wp_head(); ?>
+    <?php wp_footer(); ?>   
+
+//image call here code
+    <?php echo get_template_directory_uri(); ?>/
+
+
+//---- language foe this code
+    <html <?php language_attributes(); ?>> 
+    
+
+//-----For charset code 
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    
+
+//-----For title code here
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
+    
+
+//page divied then and call part
+    <?php get_template_part('slider'); ?>
+
+//page create index.php copy then
+        1.page.php
+        2.Single.php 
+        3.
+// templete name then
+        
+    /* Template Name: CustomPageT1 */ 
+    
+
+
+
+?>
